@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siftloop"
+version = "0.1.0"
+description = "A self-evolving coding agent harness with session memory folding and Skill evolution."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "anthropic>=0.25.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "rich>=13.0.0",
+    "tqdm>=4.66.0",
+]
+
+[project.scripts]
+siftloop = "agents.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agents", "agents.*"]
